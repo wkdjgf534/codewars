@@ -1,0 +1,40 @@
+# frozen_string_literal: true
+
+require 'rspec'
+
+# The company you work for has just been awarded a contract to build a payment gateway.
+# In order to help move things along, you have volunteered to create a function that will take a float and return the
+# amount formatting in dollars and cents.
+
+# 39.99 becomes $39.99
+
+# The rest of your team will make sure that the argument is sanitized before being passed to your
+# function although you will need to account for adding trailing zeros if they are missing
+# (though you won't have to worry about a dangling period).
+
+# Examples:
+# 3 needs to become $3.00
+# 3.1 needs to become $3.10
+
+# Good luck! Your team knows they can count on you!
+
+# The best solution from Codewars
+# def format_money(amount)
+#   format('$%.2f', amount)
+# end
+
+def format_money(amount)
+  "$#{sprintf('%.2f', amount)}"
+end
+
+p format_money(39.9)
+
+describe '#format_money' do
+  it 'returns \'$39.00\'' do
+    expect(format_money(39)).to eq('$39.00')
+  end
+
+  it 'returns \'$39.90\'' do
+    expect(format_money(39.9)).to eq('$39.90')
+  end
+end
