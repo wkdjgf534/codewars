@@ -1,3 +1,3 @@
 module gitlab.com/wkdjgf534/codewars/go
 
-go 1.20
+go 1.21
