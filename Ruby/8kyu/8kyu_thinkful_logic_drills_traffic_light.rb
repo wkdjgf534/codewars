@@ -12,24 +12,14 @@ require 'rspec'
 
 # update_light('green') => 'yellow'.
 
-# One of the best solutions from codewars
-# def update_light(current)
-#   { 'green' => 'yellow', 'yellow' => 'red', 'red' => 'green' }[current]
-# end
-
-# def update_light(current)
-#   a = %w[green yellow red green]
-#   # index - http://ruby-doc.org/core-2.5.1/Array.html#method-i-index
-#   # a.index(current) - return index of current color
-#   a[a.index(current) + 1]
-# end
-
 def update_light(current)
-  case current
-  when 'green' then 'yellow'
-  when 'yellow' then 'red'
-  when 'red' then 'green'
-  end
+  colors = {
+    'green' => 'yellow',
+    'yellow' => 'red',
+    'red' => 'green'
+  }.freeze
+
+  colors[current]
 end
 
 p update_light('green')
