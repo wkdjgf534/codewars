@@ -15,9 +15,7 @@ require 'rspec'
 #   str.split.map { |word| "#{word} #{word.length}" }
 # end
 
-def add_length(str)
-  str.split.map { |elem| elem << " #{elem.size}" }
-end
+def add_length(str) = str.split.map { |elem| elem << " #{elem.size}" }
 
 p add_length('you will win')
 

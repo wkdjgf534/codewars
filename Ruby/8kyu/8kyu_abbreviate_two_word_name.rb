@@ -17,9 +17,7 @@ require 'rspec'
 #   name.split.map { |n| n[0] }.join('.').upcase
 # end
 
-def abbrev_name(name)
-  name.split.map { |n| n[0].capitalize }.join('.')
-end
+def abbrev_name(name) = name.split.map { |n| n[0].capitalize }.join('.')
 
 p abbrev_name('Sam Harris')
 

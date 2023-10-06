@@ -10,7 +10,7 @@ require 'rspec'
 # name + " plays banjo"
 # name + " does not play banjo"
 
-# Names given caare always valid strings.
+# Names given care always valid strings.
 
 def are_you_playing_banjo(name)
   # casecmp - https://ruby-doc.org/core-2.6/String.html#method-i-casecmp

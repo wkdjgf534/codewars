@@ -15,9 +15,7 @@ require 'rspec'
 # str_count('Hello', 'l') => 2
 # str_count('', 'z')      => 0
 
-def str_count(word, letter)
-  word.count(letter)
-end
+def str_count(word, letter) = word.count(letter)
 
 p str_count('hello', 'z')
 

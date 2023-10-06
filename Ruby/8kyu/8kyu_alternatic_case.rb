@@ -18,6 +18,7 @@ require 'rspec'
 
 # As usual, your function/method should be pure, i.e. it should not mutate the original string.
 
+# This a monkey ppatching
 class String
   def to_alternating_case
     swapcase

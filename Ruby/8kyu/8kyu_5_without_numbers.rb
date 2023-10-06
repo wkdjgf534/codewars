@@ -8,14 +8,7 @@ require 'rspec'
 
 # Good luck :)
 
-# Another example from Codewars
-# def unusual_five()
-#   'five!'.length
-# end
-
-def unusual_five
-  %w[This is a trap !].size
-end
+def unusual_five = 'trap!'.length
 
 p unusual_five
 
