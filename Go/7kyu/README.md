@@ -1,1 +1,1 @@
-# Codewars 7kyu SQL solutions
+# Codewars 7kyu Go solutions
