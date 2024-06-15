@@ -1,24 +1,33 @@
 package main
 
 import (
-	"fmt"
 	"testing"
 )
 
 func TestGreet(t *testing.T) {
-	var tests = []struct {
+	type args struct {
 		name string
+	}
+	tests := []struct {
+		name string
+		args args
 		want string
 	}{
-		{"Peter", "Hello, Peter how are you doing today?"},
-		{"Eugene", "Hello, Eugene how are you doing today?"},
+		{
+			name: "when a string contains a word",
+			args: args{name: "Peter"},
+			want: "Hello, Peter how are you doing today?",
+		},
+		{
+			name: "when an empty string",
+			args: args{name: ""},
+			want: "Hello,  how are you doing today?",
+		},
 	}
-
-	for _, test := range tests {
-		testName := fmt.Sprintf("%s", test.name)
-		t.Run(testName, func(t *testing.T) {
-			if result := Greet(test.name); result != test.want {
-				t.Errorf("got %s, want %s", result, test.want)
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := Greet(tt.args.name); got != tt.want {
+				t.Errorf("Greet() = %v, want %v", got, tt.want)
 			}
 		})
 	}

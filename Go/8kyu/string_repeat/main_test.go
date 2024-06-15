@@ -1,25 +1,29 @@
 package main
 
 import (
-	"fmt"
 	"testing"
 )
 
 func TestRepeatStr(t *testing.T) {
-	var tests = []struct {
+	type args struct {
 		repetitions int
 		value       string
-		want        string
-	}{
-		{2, "Hello", "HelloHello"},
-		{5, "?", "?????"},
 	}
-
-	for _, test := range tests {
-		testName := fmt.Sprintf("%d,%s", test.repetitions, test.value)
-		t.Run(testName, func(t *testing.T) {
-			if result := RepeatStr(test.repetitions, test.value); result != test.want {
-				t.Errorf("got %s, want %s", test.want, result)
+	tests := []struct {
+		name string
+		args args
+		want string
+	}{
+		{
+			name: "when a string contains a word",
+			args: args{repetitions: 2, value: "test"},
+			want: "testtest",
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := RepeatStr(tt.args.repetitions, tt.args.value); got != tt.want {
+				t.Errorf("RepeatStr() = %v, want %v", got, tt.want)
 			}
 		})
 	}

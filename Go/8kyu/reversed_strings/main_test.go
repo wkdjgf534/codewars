@@ -1,24 +1,33 @@
 package main
 
 import (
-	"fmt"
 	"testing"
 )
 
 func TestSolution(t *testing.T) {
-	var tests = []struct {
+	type args struct {
 		word string
+	}
+	tests := []struct {
+		name string
+		args args
 		want string
 	}{
-		{"World", "dlroW"},
-		{"Reaider", "rediaeR"},
+		{
+			name: "when a string contains a word",
+			args: args{word: "Hello"},
+			want: "olleH",
+		},
+		{
+			name: "when an empty string",
+			args: args{word: ""},
+			want: "",
+		},
 	}
-
-	for _, test := range tests {
-		testName := fmt.Sprintf("%s", test.word)
-		t.Run(testName, func(t *testing.T) {
-			if result := Solution(test.word); result != test.want {
-				t.Errorf("got %s, want %s", result, test.want)
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := Solution(tt.args.word); got != tt.want {
+				t.Errorf("Solution() = %v, want %v", got, tt.want)
 			}
 		})
 	}

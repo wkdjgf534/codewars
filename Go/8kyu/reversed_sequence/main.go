@@ -9,7 +9,11 @@ Example : n=5 --> [5,4,3,2,1]
 
 // ReverseSeq creates a slice with reversed numbers
 func ReverseSeq(n int) []int {
-	numbers := []int{}
+	if n < 0 {
+		n = -n
+	}
+
+	numbers := make([]int, 0, n)
 
 	for i := n; i != 0; i-- {
 		numbers = append(numbers, i)
