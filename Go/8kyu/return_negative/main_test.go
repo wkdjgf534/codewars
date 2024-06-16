@@ -1,25 +1,36 @@
 package main
 
-import (
-	"fmt"
-	"testing"
-)
+import "testing"
 
 func TestMakeNegative(t *testing.T) {
-	var tests = []struct {
-		x    int
+	type args struct {
+		x int
+	}
+	tests := []struct {
+		name string
+		args args
 		want int
 	}{
-		{0, 0},
-		{1, -1},
-		{-1, -1},
+		{
+			name: "when a positive number",
+			args: args{x: 5},
+			want: -5,
+		},
+		{
+			name: "when a negative number",
+			args: args{x: -5},
+			want: -5,
+		},
+		{
+			name: "when zero",
+			args: args{x: 0},
+			want: 0,
+		},
 	}
-
-	for _, test := range tests {
-		testName := fmt.Sprintf("%d", test.x)
-		t.Run(testName, func(t *testing.T) {
-			if result := MakeNegative(test.x); result != test.want {
-				t.Errorf("got %d, want %d", result, test.want)
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := MakeNegative(tt.args.x); got != tt.want {
+				t.Errorf("MakeNegative() = %v, want %v", got, tt.want)
 			}
 		})
 	}

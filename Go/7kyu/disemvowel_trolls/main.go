@@ -19,5 +19,6 @@ func Disemvowel(comment string) string {
 	for _, char := range vowelCharacters {
 		comment = strings.ReplaceAll(comment, char, "")
 	}
+
 	return comment
 }

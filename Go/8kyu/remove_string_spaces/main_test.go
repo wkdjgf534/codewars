@@ -15,7 +15,7 @@ func TestNoSpace(t *testing.T) {
 			want: "Hello,world",
 		},
 		{
-			name: "when a string is emoty",
+			name: "when an empty string",
 			word: "",
 			want: "",
 		},

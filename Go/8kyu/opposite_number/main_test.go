@@ -1,25 +1,37 @@
 package main
 
-import (
-	"fmt"
-	"testing"
-)
+import "testing"
 
 func TestOpposite(t *testing.T) {
-	var tests = []struct {
+	type args struct {
 		value int
-		want  int
-	}{
-		{2, -2},
-		{-100, 100},
-		{123, -123},
 	}
+	tests := []struct {
+		name string
+		args args
+		want int
+	}{
 
-	for _, test := range tests {
-		testName := fmt.Sprintf("%d", test.value)
-		t.Run(testName, func(t *testing.T) {
-			if result := Opposite(test.value); result != test.want {
-				t.Errorf("got %d, want %d", result, test.want)
+		{
+			name: "when a positive number",
+			args: args{value: 5},
+			want: -5,
+		},
+		{
+			name: "when a negative number",
+			args: args{value: -5},
+			want: 5,
+		},
+		{
+			name: "when zero",
+			args: args{value: 0},
+			want: 0,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := Opposite(tt.args.value); got != tt.want {
+				t.Errorf("Opposite() = %v, want %v", got, tt.want)
 			}
 		})
 	}

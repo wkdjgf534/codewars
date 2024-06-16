@@ -15,5 +15,6 @@ func GetCount(str string) (count int) {
 			count++
 		}
 	}
+
 	return count
 }

@@ -8,4 +8,6 @@ Make a function that will return a greeting statement that uses an input; your p
 */
 
 // Greet put user name into greeting string
-func Greet(name string) string { return "Hello, " + name + " how are you doing today?" }
+func Greet(name string) string {
+	return "Hello, " + name + " how are you doing today?"
+}

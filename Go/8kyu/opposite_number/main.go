@@ -12,4 +12,6 @@ Examples:
 */
 
 // Opposite returns a integer with an opposite sign
-func Opposite(value int) int { return -value }
+func Opposite(value int) int {
+	return -value
+}

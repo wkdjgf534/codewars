@@ -17,5 +17,6 @@ func PositiveSum(numbers []int) int {
 			sum += num
 		}
 	}
+
 	return sum
 }

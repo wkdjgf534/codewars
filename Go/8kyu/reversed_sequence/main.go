@@ -18,5 +18,6 @@ func ReverseSeq(n int) []int {
 	for i := n; i != 0; i-- {
 		numbers = append(numbers, i)
 	}
+
 	return numbers
 }

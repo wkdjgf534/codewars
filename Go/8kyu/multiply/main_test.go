@@ -1,27 +1,37 @@
 package main
 
-import (
-	"fmt"
-	"testing"
-)
+import "testing"
 
 func TestMultiply(t *testing.T) {
-	var tests = []struct {
-		a, b int
+	type args struct {
+		a int
+		b int
+	}
+	tests := []struct {
+		name string
+		args args
 		want int
 	}{
-		{1, 1, 1},
-		{2, 2, 4},
-		{-2, 2, -4},
-		{-4, -10, 40},
-		{1, 0, 0},
+		{
+			name: "when positive numbers",
+			args: args{a: 3, b: 2},
+			want: 6,
+		},
+		{
+			name: "when zero is present",
+			args: args{a: 3, b: 0},
+			want: 0,
+		},
+		{
+			name: "when negative numbers",
+			args: args{a: -3, b: -2},
+			want: 6,
+		},
 	}
-
-	for _, test := range tests {
-		testName := fmt.Sprintf("%d,%d", test.a, test.b)
-		t.Run(testName, func(t *testing.T) {
-			if result := Multiply(test.a, test.b); result != test.want {
-				t.Errorf("got %d, want %d", result, test.want)
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := Multiply(tt.args.a, tt.args.b); got != tt.want {
+				t.Errorf("Multiply() = %v, want %v", got, tt.want)
 			}
 		})
 	}

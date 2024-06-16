@@ -16,5 +16,6 @@ func Solution(word string) string {
 		// string(char) - converts letter in decimal code to character
 		reversedString = string(char) + reversedString
 	}
+
 	return reversedString
 }
