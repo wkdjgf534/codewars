@@ -27,6 +27,7 @@ func TestDisemvowel(t *testing.T) {
 			want: "",
 		},
 	}
+
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := Disemvowel(tt.args.comment); got != tt.want {

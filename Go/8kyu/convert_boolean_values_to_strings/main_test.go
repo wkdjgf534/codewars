@@ -1,24 +1,31 @@
 package main
 
-import (
-	"fmt"
-	"testing"
-)
+import "testing"
 
 func TestBoolToWord(t *testing.T) {
-	var tests = []struct {
+	type args struct {
 		word bool
+	}
+	tests := []struct {
+		name string
+		args args
 		want string
 	}{
-		{true, "Yes"},
-		{false, "No"},
+		{
+			name: "when false",
+			args: args{word: false},
+			want: "No",
+		},
+		{
+			name: "when true",
+			args: args{word: true},
+			want: "Yes",
+		},
 	}
-
-	for _, test := range tests {
-		testName := fmt.Sprintf("%v", test.word)
-		t.Run(testName, func(t *testing.T) {
-			if result := BoolToWord(test.word); result != test.want {
-				t.Errorf("got %s, want %s", result, test.want)
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := BoolToWord(tt.args.word); got != tt.want {
+				t.Errorf("BoolToWord() = %v, want %v", got, tt.want)
 			}
 		})
 	}

@@ -29,6 +29,7 @@ func TestGetCount(t *testing.T) {
 			wantCount: 0,
 		},
 	}
+
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if gotCount := GetCount(tt.args.str); gotCount != tt.wantCount {

@@ -27,6 +27,7 @@ func TestMakeNegative(t *testing.T) {
 			want: 0,
 		},
 	}
+
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := MakeNegative(tt.args.x); got != tt.want {

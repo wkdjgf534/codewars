@@ -24,6 +24,7 @@ func TestGreet(t *testing.T) {
 			want: "Hello,  how are you doing today?",
 		},
 	}
+
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := Greet(tt.args.name); got != tt.want {

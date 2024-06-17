@@ -18,7 +18,9 @@ Examples (input --> output):
 */
 
 // NumberToString converts a number to a string
-func NumberToString(number int) string { return strconv.Itoa(number) }
+func NumberToString(number int) string {
+	return strconv.Itoa(number)
+}
 
 // NumberToStringAlternatives converts a number to a string (alternative solution)
 func NumberToStringAlternative(number int) string {

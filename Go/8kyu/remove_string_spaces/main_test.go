@@ -20,6 +20,7 @@ func TestNoSpace(t *testing.T) {
 			want: "",
 		},
 	}
+
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := NoSpace(tt.word); got != tt.want {
