@@ -21,4 +21,6 @@ Examples (input --> output):
 func NumberToString(number int) string { return strconv.Itoa(number) }
 
 // NumberToStringAlternatives converts a number to a string (alternative solution)
-func NumberToStringAlternative(number int) string { return fmt.Sprintf("%d", number) }
+func NumberToStringAlternative(number int) string {
+	return fmt.Sprintf("%d", number)
+}

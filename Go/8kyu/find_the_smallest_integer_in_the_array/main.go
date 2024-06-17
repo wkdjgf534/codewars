@@ -20,5 +20,6 @@ func SmallestIntegerFinder(numbers []int) int {
 			min = num
 		}
 	}
+
 	return min
 }

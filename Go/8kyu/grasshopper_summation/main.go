@@ -7,5 +7,6 @@ func Summation(n int) int {
 	for i := 0; n >= i; i++ {
 		sum += i
 	}
+
 	return sum
 }

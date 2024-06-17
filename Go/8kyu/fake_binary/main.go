@@ -17,5 +17,6 @@ func FakeBin(x string) string {
 			binStr += "1"
 		}
 	}
+
 	return binStr
 }
